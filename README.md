@@ -1,6 +1,6 @@
 # 🧠 ThinkDots-**Turn thoughts into constellations.**
 
-ThinkDots is an AI-powered knowledge exploration engine that transforms any concept into a living network of connected ideas. Explore knowledge visually as glowing, dynamic dots that move, connect, and evolve — instead of reading static text.
+ThinkDots is an AI-powered knowledge exploration engine that transforms any concept into a living network of connected ideas. Explore knowledge visually as glowing, dynamic dots that move, connect, and evolve instead of reading static text.
 
 ---
 
@@ -45,7 +45,7 @@ No installations. No headaches.
     git clone https://github.com/dedsecisamood/thinkdots.git
     ```
 2.  **Launch the App**:
-    Open (index.html) or use a "Live Server" extension in VS Code.
+    Open https://thinkdots.netlify.app/
 
 ---
 
