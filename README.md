@@ -1,4 +1,4 @@
-# 🧠 ThinkDots**Turn thoughts into constellations.**
+# 🧠 ThinkDots-**Turn thoughts into constellations.**
 
 ThinkDots is an AI-powered knowledge exploration engine that transforms any concept into a living network of connected ideas. Explore knowledge visually as glowing, dynamic dots that move, connect, and evolve — instead of reading static text.
 
@@ -17,14 +17,12 @@ ThinkDots is an AI-powered knowledge exploration engine that transforms any conc
 
 ## 🎯 Why ThinkDots?
 
-Learning is not linear — ideas connect.  
+Learning is not linear, ideas connect.  
 ThinkDots helps you:
 
 - Discover relationships between concepts  
 - Understand topics structurally  
 - Explore knowledge visually instead of reading blocks of text  
-
-> Making thinking visible.
 
 ---
 
@@ -47,7 +45,7 @@ No installations. No headaches.
     git clone https://github.com/dedsecisamood/thinkdots.git
     ```
 2.  **Launch the App**:
-    Double-click [index.html](index.html) or use a "Live Server" extension in VS Code.
+    Open (index.html) or use a "Live Server" extension in VS Code.
 
 ---
 
@@ -65,17 +63,12 @@ No installations. No headaches.
 
 ## 🤝 How to Contribute
 
-Being in your second semester is the _perfect_ time to start contributing!
-
 1. **Fork** the project.
 2. **Experiment** with the physics variables in `src/main.js`.
 3. **Add** new themes or node categories in `src/style.css`.
-4. **Submit a PR!**
-
-## 📜 License
-
-This project is licensed under the DedSec License. Use it, learn from it, and build something amazing.
+4. **Submit a Pull Request!**
 
 ---
 
+##Use it, learn from it, and build something amazing.
 Created with ❤️ by **dedsecisamood**
