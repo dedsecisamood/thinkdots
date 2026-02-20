@@ -1,34 +1,40 @@
-# 🌌 Thinkdots — The Connected Knowledge Engine
+# 🧠 ThinkDots**Turn thoughts into constellations.**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)]()
-[![AI](https://img.shields.io/badge/AI-Powered-purple.svg)]()
-[![No-Build](https://img.shields.io/badge/No--Build-ESM-green.svg)]()
-
-**Thinkdots** is a living, breathing knowledge exploration tool. It takes any concept and explodes it into a beautiful, interactive constellation of connected ideas, powered by Generative AI.
-
-> _“In a world of information, the most valuable thing is the connection between the dots.”_
+ThinkDots is an AI-powered knowledge exploration engine that transforms any concept into a living network of connected ideas. Explore knowledge visually as glowing, dynamic dots that move, connect, and evolve — instead of reading static text.
 
 ---
 
-## ✨ Features that Make it 10/10
+## ✨ Features
 
-- **🧩 Conceptual Explosions**: Enter a topic, and watch as it bursts into a network of related thoughts.
-- **🧠 Thinkdots AI Integration**: Uses Google's Gemini API to dynamically generate knowledge graphs in real-time.
-- **🎥 Kinetic Camera Engine**: A smooth, physics-based camera that follows your focus with buttery 60 FPS transitions.
-- **🌑 Cinematic Aesthetic**: Deep space visuals with glowing nodes, flowing particle streams, and glassmorphism UI.
-- **⚡ Pro-Level Physics**: Each "dot" has mass and repulsion, making the graph feel alive and responsive to your touch.
-- **🔎 Fuzzy Knowledge Base**: A built-in "Brain" with 50+ core concepts that works even when offline.
+- 🔵 **Interactive Idea Graphs** – Visualize concepts as nodes and connections.  
+- 🤖 **Powered by Gemini AI** – Generate real-time constellations for any topic.  
+- 🌌 **Living Constellations** – Ideas animate and interact like a living system.  
+- 🎥 **Kinetic Camera** – Smooth physics-based pan, zoom, and auto-centering.  
+- 🔍 **Fuzzy Search** – Find topics quickly with intelligent matching.  
+- ⚡ **No-Build ESM** – Open instantly in any modern browser.  
 
 ---
 
-## 🛠️ The "No-Build" Magic (Technology)
+## 🎯 Why ThinkDots?
 
-As a student, you've probably seen complex setups with `npm install` and `vite build`. **Thinkdots** is different. It uses a **Modern No-Build** approach:
+Learning is not linear — ideas connect.  
+ThinkDots helps you:
 
-- **Vanilla JavaScript (ES Modules)**: We use the browser's native power to handle files. No compiler needed.
-- **Canvas API**: Everything is rendered on a high-speed drawing surface for maximum performance.
-- **Clean Architecture**: Decoupled modules for Physics, Rendering, and AI logic in the `src/` folder.
+- Discover relationships between concepts  
+- Understand topics structurally  
+- Explore knowledge visually instead of reading blocks of text  
+
+> Making thinking visible.
+
+---
+
+## 🛠 Tech Stack
+
+- Vanilla JavaScript (ES Modules)  
+- Google Gemini API  
+- Custom force-directed graph physics engine  
+- HTML5 + Modern CSS (Glassmorphism UI)  
+- No build tools required  
 
 ---
 
@@ -68,8 +74,8 @@ Being in your second semester is the _perfect_ time to start contributing!
 
 ## 📜 License
 
-This project is licensed under the MIT License. Use it, learn from it, and build something amazing.
+This project is licensed under the DedSec License. Use it, learn from it, and build something amazing.
 
 ---
 
-Created with ❤️ by **dedsecisamood** & **Antigravity AI**.
+Created with ❤️ by **dedsecisamood**
