@@ -1,0 +1,18 @@
+{
+  "name": "thinkdots",
+  "version": "1.0.0",
+  "description": "Visual knowledge constellation explorer powered by Thinkdots AI",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'Just open index.html in your browser!'"
+  },
+  "keywords": [
+    "knowledge-graph",
+    "gemini-ai",
+    "visualization",
+    "interactive",
+    "constellation"
+  ],
+  "author": "",
+  "license": "MIT"
+}
