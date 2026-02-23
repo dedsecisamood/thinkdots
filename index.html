@@ -1,134 +1,172 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THINKDOTS — The Connected Intelligence Engine</title>
+    <meta
+      name="description"
+      content="Explore the universe of knowledge as a living network of connected dots."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THINKDOTS — The Connected Knowledge Engine</title>
-  <meta name="description"
-    content="Explore the universe of knowledge as a living network of connected dots.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="src/style.css">
-</head>
+  <body>
+    <!-- Loading -->
+    <div id="loader">
+      <div class="load-logo">THINKDOTS</div>
+      <div class="load-sub">CONNECTING THE DOTS</div>
+    </div>
 
-<body>
+    <!-- Canvases -->
+    <canvas id="bgCanvas"></canvas>
+    <canvas id="graphCanvas"></canvas>
 
-  <!-- Loading -->
-  <div id="loader">
-    <div class="load-logo">THINKDOTS</div>
-    <div class="load-sub">CONNECTING THE DOTS</div>
-  </div>
-
-  <!-- Canvases -->
-  <canvas id="bgCanvas"></canvas>
-  <canvas id="graphCanvas"></canvas>
-
-  <!-- UI -->
-  <div id="ui">
-    <!-- Header -->
-    <div class="header">
-      <div class="logo-wrap">
-        <div class="logo">THINKDOTS</div>
-        <div class="logo-sub">THE CONNECTED KNOWLEDGE ENGINE</div>
-        <div style="font-size:10px;color:rgba(0,212,255,.55);letter-spacing:.14em;margin-top:6px;">✦ BY THINKDOTS AI</div>
+    <!-- UI -->
+    <div id="ui">
+      <!-- Header -->
+      <div class="header">
+        <div class="logo-wrap">
+          <div class="logo">ThinkDots</div>
+          <div class="logo-sub">Connected Intelligence</div>
+        </div>
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-val" id="learnedCount">0</div>
+            <div class="stat-lbl">Mastered</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val" id="nodeCount">0</div>
+            <div class="stat-lbl">Concepts</div>
+          </div>
+        </div>
       </div>
-      <div class="stats">
-        <div class="stat-val" id="nodeCount" style="color:#00d4ff">0</div>
-        <div class="stat-lbl">Nodes</div>
-        <div class="stat-val" id="edgeCount" style="color:#7b2fff">0</div>
-        <div class="stat-lbl">Links</div>
+
+      <!-- Legend -->
+      <div class="legend">
+        <div class="legend-title">Categories</div>
+        <div class="legend-item">
+          <div class="leg-dot" style="background: var(--cat-logic);"></div> Logic
+        </div>
+        <div class="legend-item">
+          <div class="leg-dot" style="background: var(--cat-syntax);"></div> Syntax
+        </div>
+        <div class="legend-item">
+          <div class="leg-dot" style="background: var(--cat-tools);"></div> Tools
+        </div>
+        <div class="legend-item">
+          <div class="leg-dot" style="background: var(--cat-frontend);"></div> Frontend
+        </div>
+        <div class="legend-item">
+          <div class="leg-dot" style="background: var(--cat-backend);"></div> Backend
+        </div>
+        <div class="legend-item">
+          <div class="leg-dot" style="background: var(--cat-data);"></div> Data
+        </div>
+      </div>
+
+      <!-- Empty state -->
+      <div class="empty" id="emptyState">
+        <div class="empty-icon">⌨️</div>
+        <div class="empty-title">Select a Language</div>
+        <div class="empty-sub">Enter a topic or pick an essential track below</div>
+      </div>
+
+      <!-- Info Panel -->
+      <div class="info-panel" id="infoPanel">
+        <button class="close-btn" id="closeBtn">✕</button>
+        <div class="info-cat" id="infoCat"></div>
+        <div class="info-title" id="infoTitle"></div>
+        <div class="info-desc" id="infoDesc"></div>
+        <div class="info-conns-title">Connected To</div>
+        <div id="infoConns"></div>
+        <button class="expand-btn" id="learnBtn">MARK AS LEARNED</button>
+        <button class="expand-btn" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-color); margin-top: 10px;" id="expandBtn">EXPLORE DEEPER</button>
+      </div>
+
+      <!-- Seed Panel -->
+      <div class="seed-panel">
+        <div class="seed-wrap" style="position: relative">
+          <div class="search-hint" id="searchHint"></div>
+          <input
+            class="seed-input"
+            id="seedInput"
+            placeholder="Search language or concept... 'Python Roadmap'"
+            type="text"
+            autocomplete="off"
+          />
+          <button class="seed-btn" id="exploreBtn">EXPLORE</button>
+          <button
+            class="seed-btn"
+            id="surpriseBtn"
+            style="
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              margin-left: 5px;
+              padding: 11px 18px;
+            "
+            title="Surprise Me"
+          >
+            🎲
+          </button>
+        </div>
+        <div class="chips">
+          <span class="chip" data-t="python">🐍 Python</span>
+          <span class="chip" data-t="javascript">📜 JavaScript</span>
+          <span class="chip" data-t="c++">⚙️ C++</span>
+          <span class="chip" data-t="html">🌐 HTML/CSS</span>
+          <span class="chip" data-t="git">📁 Git/GitHub</span>
+          <span class="chip" data-t="algorithms">🧩 Algorithms</span>
+          <span class="chip" data-t="react">⚛️ React</span>
+          <span class="chip" data-t="backend">🖥️ Backend</span>
+          <span class="chip" data-t="database">🗄️ Database</span>
+        </div>
+      </div>
+
+      <!-- Hint -->
+      <div class="hint">
+        🖱️ Scroll · zoom<br />
+        🤚 Drag · pan<br />
+        👆 Click · explore
+      </div>
+
+      <!-- Theme Toggle -->
+      <div class="theme-toggle">
+        <button class="theme-btn" id="themeBtn" title="Toggle Theme">🌓</button>
+      </div>
+
+      <!-- AI Status -->
+      <div class="ai-status off" id="aiStatus">
+        <div class="ai-dot"></div>
+        <div class="ai-dot"></div>
+        <div class="ai-dot"></div>
+        &nbsp;&nbsp;THINKING…
+      </div>
+      <!-- Tooltip -->
+      <div id="tooltip" style="opacity: 0"></div>
+    </div>
+
+    <!-- Onboarding Overlay -->
+    <div id="onboarding">
+      <div class="onboard-card">
+        <div class="onboard-title">WELCOME TO THINKDOTS</div>
+        <p class="onboard-text">
+          Explore the universe of knowledge as a living network. ThinkDots helps you
+          visualize complex topics and "connect the dots" of your learning journey.
+          <br /><br />
+          Click a track below or search for any concept to begin.
+        </p>
+        <button class="onboard-btn" id="startBtn">BEGIN EXPLORATION</button>
       </div>
     </div>
 
-    <!-- Legend -->
-    <div class="legend">
-      <div class="legend-title">Domains</div>
-      <div class="legend-item">
-        <div class="leg-dot" style="background:#00d4ff;box-shadow:0 0 6px #00d4ff40"></div>Technology
-      </div>
-      <div class="legend-item">
-        <div class="leg-dot" style="background:#7b2fff;box-shadow:0 0 6px #7b2fff40"></div>Science
-      </div>
-      <div class="legend-item">
-        <div class="leg-dot" style="background:#ff6b35;box-shadow:0 0 6px #ff6b3540"></div>Philosophy
-      </div>
-      <div class="legend-item">
-        <div class="leg-dot" style="background:#ff3d9a;box-shadow:0 0 6px #ff3d9a40"></div>Arts
-      </div>
-      <div class="legend-item">
-        <div class="leg-dot" style="background:#00ff88;box-shadow:0 0 6px #00ff8840"></div>Cosmos
-      </div>
-      <div class="legend-item">
-        <div class="leg-dot" style="background:#ffd93d;box-shadow:0 0 6px #ffd93d40"></div>Mind
-      </div>
-    </div>
-
-    <!-- Empty state -->
-    <div class="empty" id="emptyState">
-      <div class="empty-icon">🌌</div>
-      <div class="empty-title">Choose a Concept</div>
-      <div class="empty-sub">Type anything below or pick a quick-start</div>
-    </div>
-
-    <!-- Info Panel -->
-    <div class="info-panel" id="infoPanel">
-      <button class="close-btn" id="closeBtn">✕</button>
-      <div class="info-cat" id="infoCat"></div>
-      <div class="info-title" id="infoTitle"></div>
-      <div class="info-desc" id="infoDesc"></div>
-      <div class="info-conns-title">Connected To</div>
-      <div id="infoConns"></div>
-      <button class="expand-btn" id="expandBtn">⚡ Expand This Node</button>
-    </div>
-
-    <!-- Seed Panel -->
-    <div class="seed-panel">
-      <div class="seed-wrap" style="position: relative;">
-        <div class="search-hint" id="searchHint"></div>
-        <input class="seed-input" id="seedInput" placeholder="Explore any concept… try 'quantum physics'" type="text"
-          autocomplete="off" />
-        <button class="seed-btn" id="exploreBtn">EXPLORE</button>
-        <button class="seed-btn" id="surpriseBtn"
-          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); margin-left: 5px; padding: 11px 18px;"
-          title="Surprise Me">🎲</button>
-      </div>
-      <div class="chips">
-        <span class="chip" data-t="artificial intelligence">🤖 AI</span>
-        <span class="chip" data-t="blockchain">⛓️ Blockchain</span>
-        <span class="chip" data-t="social media">📱 Social Media</span>
-        <span class="chip" data-t="human life">🌱 Life</span>
-        <span class="chip" data-t="world history">📜 History</span>
-        <span class="chip" data-t="Islam">☪️ Islam</span>
-        <span class="chip" data-t="universe">🌌 Universe</span>
-        <span class="chip" data-t="consciousness">🧠 Mind</span>
-        <span class="chip" data-t="music">🎵 Music</span>
-        <span class="chip" data-t="evolution">🧬 Evolution</span>
-        <span class="chip" data-t="mathematics">∞ Math</span>
-        <span class="chip" data-t="quantum physics">⚛️ Quantum</span>
-      </div>
-    </div>
-
-    <!-- Hint -->
-    <div class="hint">
-      🖱️ Scroll · zoom<br>
-      🤚 Drag · pan<br>
-      👆 Click · explore
-    </div>
-
-    <!-- AI Status -->
-    <div class="ai-status off" id="aiStatus">
-      <div class="ai-dot"></div>
-      <div class="ai-dot"></div>
-      <div class="ai-dot"></div>&nbsp;&nbsp;THINKING…
-    </div>
-    <!-- Tooltip -->
-    <div id="tooltip" style="opacity:0;"></div>
-  </div>
-
-  <script type="module" src="src/main.js"></script>
-</body>
-
+    <script src="src/knowledge.js"></script>
+    <script src="src/gemini.js"></script>
+    <script src="src/main.js"></script>
+  </body>
 </html>

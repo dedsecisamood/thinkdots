@@ -4,7 +4,7 @@
   "description": "Visual knowledge constellation explorer powered by Thinkdots AI",
   "main": "index.html",
   "scripts": {
-    "start": "echo 'Just open index.html in your browser!'"
+    "start": "npx serve ."
   },
   "keywords": [
     "knowledge-graph",
