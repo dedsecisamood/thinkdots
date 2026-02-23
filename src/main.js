@@ -496,27 +496,6 @@ document.querySelectorAll('.chip').forEach(c => {
     c.addEventListener('click', () => { if (si) { si.value = c.dataset.t; explore(); } });
 });
 
-// ─── THEME ───────────────────────────────────────────────────
-function initTheme() {
-    const saved = localStorage.getItem('thinkdots-theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', saved);
-    document.getElementById('themeBtn').textContent = saved === 'light' ? '🌙' : '☀️';
-}
-function refreshNodeColors() {
-    Object.keys(nodes).forEach(k => {
-        nodes[k].color = window.THINKDOTS.getColor(k, aiGraph);
-    });
-}
-
-function toggleTheme() {
-    const curr = document.documentElement.getAttribute('data-theme');
-    const next = curr === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('thinkdots-theme', next);
-    document.getElementById('themeBtn').textContent = next === 'light' ? '🌙' : '☀️';
-    refreshNodeColors();
-}
-document.getElementById('themeBtn').onclick = toggleTheme;
 
 function loop() { 
     drawBackground(); physics(); smoothCamera(); tickParticles(); drawGraph(); 
@@ -525,7 +504,6 @@ function loop() {
 
 // Kickoff
 initStars();
-initTheme();
 loop();
 
 setTimeout(() => {
