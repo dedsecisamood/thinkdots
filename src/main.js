@@ -446,7 +446,13 @@ function toggleLearned() {
 
 document.getElementById('learnBtn').onclick = toggleLearned;
 document.getElementById('closeBtn').onclick = () => { document.getElementById('infoPanel').classList.remove('open'); selectedNode = null; };
-document.getElementById('expandBtn').onclick = () => { if (expandTarget) expandNode(expandTarget); };
+document.getElementById('expandBtn').onclick = () => { 
+    if (expandTarget) {
+        expandNode(expandTarget);
+        const wikiUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(expandTarget.replace(/ /g, '_'))}`;
+        window.open(wikiUrl, '_blank');
+    }
+};
 document.getElementById('exploreBtn').onclick = explore;
 document.getElementById('surpriseBtn').onclick = surprise;
 
